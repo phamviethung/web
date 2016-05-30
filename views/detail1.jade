@@ -1,0 +1,58 @@
+doctype html
+html(lang='en')
+    head
+        title Movie Search & Recommendation
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')
+        script(src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js')
+    body
+        nav.navbar.navbar-default
+            .container
+                .navbar-header
+                    a.navbar-brand(href='http://phamviethung.github.io') About Me
+                ul.nav.navbar-nav
+                    li
+                        a(href='http://192.168.7.205:8080/home') Home
+                    li
+                        a(href='#') Result
+                    li.active
+                        a(href='#') Detail
+
+                ul.nav.navbar-nav.navbar-right
+                    li
+                        a(href="/profile")= 'Welcome User ' + msg2
+                    li
+                        a(href="http://192.168.7.205:8080/logout") Logout
+        .container
+            h2 Detail Information
+            br
+            table.table.table-striped
+                thead
+                    tr
+                        th ID
+                        th TITLE
+                        th GENRE
+                        th ITEM SIMILARITY
+                        th YOU MAY ALSO LIKE
+
+                tbody
+                    each item in msg0
+                        - var list0 = item._source.indicators.split("|")
+
+                        tr
+                            td=item._id
+                            td=item._source.title
+                            td=item._source.genre
+                            td
+                                each val in list0
+                                    a(href='recommend?title='+val)= val
+                                    br
+                            each item1 in msg1
+                                - var list1 = item1._source.recommend.split("|")
+                                td
+                                    each val in list1
+                                        a(href='recommend?title='+val)= val
+                                        br
+
