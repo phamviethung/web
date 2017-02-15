@@ -1,12 +1,7 @@
 // app/routes.js
-
+var client = require('C:/Users/hungpv/WebstormProjects/recommender/config/elasticsearch');
 module.exports = function (app, passport) {
-    var elasticsearch = require('elasticsearch');
-
-    var client = new elasticsearch.Client({
-        host: 'localhost:9200',
-        log: 'trace'
-    });
+   //var client = require('C:/Users/hungpv/WebstormProjects/recommender/config/elasticsearch');
 
     // =====================================
     // HOME PAGE (with login links) ========

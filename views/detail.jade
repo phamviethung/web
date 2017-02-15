@@ -19,8 +19,7 @@ html(lang='en')
                         a(href='#') Result
                     li.active
                         a(href='#') Detail
-
-                ul.nav.navbar-nav.navbar-right
+                            ul.nav.navbar-nav.navbar-right
                     li
                         a(href="login") Login
         .container
@@ -33,9 +32,7 @@ html(lang='en')
                         th TITLE
                         th GENRE
                         th ITEM SIMILARITY
-
-
-                tbody
+                            tbody
                     each item in msg0
                         - var list0 = item._source.indicators.split("|")
                         tr
