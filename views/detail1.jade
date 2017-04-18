@@ -11,14 +11,14 @@ html(lang='en')
         nav.navbar.navbar-default
             .container
                 .navbar-header
-                    a.navbar-brand(href='http://phamviethung.github.io') About Me
+                    a.navbar-brand(href='http://phamviethung.github.io') About
                 ul.nav.navbar-nav
                     li
-                        a(href='http://192.168.7.205:8080/home') Home
+                        a(href='http://192.168.7.205:8080/home') Search
                     li
                         a(href='#') Result
                     li.active
-                        a(href='#') Detail
+                        a(href='#') Recommend
 
                 ul.nav.navbar-nav.navbar-right
                     li
@@ -26,7 +26,7 @@ html(lang='en')
                     li
                         a(href="http://192.168.7.205:8080/logout") Logout
         .container
-            h2 Detail Information
+            h2 Recommendation
             br
             table.table.table-striped
                 thead
@@ -35,7 +35,7 @@ html(lang='en')
                         th TITLE
                         th GENRE
                         th ITEM SIMILARITY
-                        th YOU MAY ALSO LIKE
+                        th MATRIX FACTORIZATION
 
                 tbody
                     each item in msg0
